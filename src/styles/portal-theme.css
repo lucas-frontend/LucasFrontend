@@ -1,0 +1,1162 @@
+/* LUCASFRONTEND — PORTAL DE LUZ */
+
+/* Boton circular minimalista */
+.portal-theme-toggle {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(190, 204, 225, .35);
+  background: rgba(29, 42, 64, .85);
+  color: #edf3ff;
+  cursor: pointer;
+  transition: border-color .3s, background .3s, box-shadow .3s;
+}
+
+.portal-theme-toggle::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  border-top-color: #91adc9;
+  border-right-color: #8f85be;
+  opacity: .65;
+  transition: transform .55s ease, opacity .3s ease;
+}
+
+.portal-theme-toggle:hover::before {
+  transform: rotate(100deg);
+  opacity: 1;
+}
+
+.portal-theme-toggle:hover {
+  border-color: #9fb1d0;
+  box-shadow: 0 0 20px rgba(129, 151, 193, .16);
+}
+
+.portal-theme-core {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: #263753;
+  font-size: 24px;
+  line-height: 1;
+  transition: background .3s, color .3s;
+}
+
+.portal-theme-toggle:focus-visible {
+  outline: 3px solid #62e8e2;
+  outline-offset: 5px;
+}
+
+/* Transicion circular desde el boton */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-old(root) {
+  z-index: 0;
+}
+
+/* MODO CLARO */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --base: #f4f7fc;
+  --panel: #ffffff;
+  --ink: #17263e;
+  --muted: #576c85;
+  --line: rgba(46, 72, 105, .17);
+  --cyan: #087e87;
+  --purple: #6d5abd;
+  color: #17263e;
+  background: #f4f7fc;
+}
+
+:root[data-theme="light"] body {
+  background: #f4f7fc;
+}
+
+:root[data-theme="light"] .background-glow {
+  background:
+    radial-gradient(ellipse 38% 35% at 80% 28%,
+      rgba(147, 133, 206, .12), transparent 75%),
+    radial-gradient(ellipse 44% 30% at 8% 30%,
+      rgba(87, 170, 184, .10), transparent 75%);
+}
+
+:root[data-theme="light"] .site-header {
+  background: rgba(250, 252, 255, .88);
+  border-bottom-color: rgba(38, 67, 100, .12);
+}
+
+:root[data-theme="light"] .brand,
+:root[data-theme="light"] .nav-links a {
+  color: #24354c;
+}
+
+:root[data-theme="light"] .brand-mark {
+  color: #087e87;
+  background: rgba(8, 126, 135, .06);
+  border-color: rgba(8, 126, 135, .25);
+}
+
+:root[data-theme="light"] .nav-links a:hover,
+:root[data-theme="light"] .nav-links a:focus-visible {
+  color: #087e87;
+  text-shadow: none;
+}
+
+:root[data-theme="light"] .portal-theme-toggle {
+  background: #ffffff;
+  color: #586d87;
+  border-color: #ccd5e4;
+}
+
+:root[data-theme="light"] .portal-theme-core {
+  background: #eaf0f8;
+  color: #536681;
+}
+
+/* Hero y tipografia */
+:root[data-theme="light"] .hero-copy h1,
+:root[data-theme="light"] .hero-name,
+:root[data-theme="light"] .hero-line,
+:root[data-theme="light"] .section h2,
+:root[data-theme="light"] .project-info h3,
+:root[data-theme="light"] .stack-heading h3 {
+  color: #17263e;
+}
+
+:root[data-theme="light"] .text-gradient,
+:root[data-theme="light"] .section-intro h2 em,
+:root[data-theme="light"] .about-text h2 em,
+:root[data-theme="light"] .contact-content h2 em {
+  background: linear-gradient(110deg, #087e87, #5473b8, #7655ae);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:root[data-theme="light"] .eyebrow,
+:root[data-theme="light"] .section-kicker span,
+:root[data-theme="light"] .project-number {
+  color: #087e87;
+}
+
+:root[data-theme="light"] .hero-description,
+:root[data-theme="light"] .hero-proof,
+:root[data-theme="light"] .section-intro-row > p,
+:root[data-theme="light"] .project-description,
+:root[data-theme="light"] .stack-card p,
+:root[data-theme="light"] .about-text p,
+:root[data-theme="light"] .contact-content p {
+  color: #536982;
+}
+
+:root[data-theme="light"] .section-kicker,
+:root[data-theme="light"] .project-type {
+  color: #60758e;
+}
+
+:root[data-theme="light"] .button-primary {
+  color: #ffffff;
+  background: #087e87;
+  box-shadow: 0 8px 25px rgba(8, 126, 135, .12);
+}
+
+:root[data-theme="light"] .button-primary:hover {
+  background: #096d78;
+}
+
+:root[data-theme="light"] .button-ghost {
+  background: #ffffff;
+  color: #24354c;
+  border-color: #cfd9e7;
+}
+
+:root[data-theme="light"] .button-ghost:hover {
+  background: #eaf0f8;
+}
+
+:root[data-theme="light"] .floating-label {
+  background: rgba(255, 255, 255, .94);
+  border-color: #dce4ef;
+  box-shadow: 0 12px 35px rgba(37, 61, 94, .12);
+}
+
+:root[data-theme="light"] .floating-label strong {
+  color: #20334c;
+}
+
+:root[data-theme="light"] .floating-label small {
+  color: #687c93;
+}
+
+/* Tarjetas y proyectos */
+:root[data-theme="light"] .project-card,
+:root[data-theme="light"] .stack-card,
+:root[data-theme="light"] .about-pane {
+  background: linear-gradient(155deg, #ffffff, #f1f5fb);
+  border-color: #dce4ef;
+  color: #17263e;
+}
+
+:root[data-theme="light"] .project-tags span,
+:root[data-theme="light"] .stack-tags span {
+  background: rgba(59, 88, 125, .05);
+  color: #3c5270;
+  border-color: #d5deeb;
+}
+
+:root[data-theme="light"] .project-status.sold {
+  color: #116b50;
+  background: #e7f5ee;
+}
+
+:root[data-theme="light"] .project-status.public {
+  color: #6844a5;
+  background: #f0eafb;
+}
+
+:root[data-theme="light"] .case-details {
+  background: #edf3fa;
+  border-color: #d6e0ed;
+}
+
+:root[data-theme="light"] .case-details strong,
+:root[data-theme="light"] .about-text strong {
+  color: #24354c;
+}
+
+:root[data-theme="light"] .case-details p,
+:root[data-theme="light"] .about-milestones small {
+  color: #536982;
+}
+
+:root[data-theme="light"] .about-milestones > div {
+  border-top-color: #d4dfec;
+}
+
+:root[data-theme="light"] .about-milestones span {
+  color: #087e87;
+}
+
+/* Contacto */
+:root[data-theme="light"] .contact-panel {
+  background: linear-gradient(
+    120deg, #e9f5f8, #f0f2fc 65%, #f1ebfa
+  );
+  border-color: #c6dce7;
+}
+
+:root[data-theme="light"] .contact-email {
+  color: #5e7289;
+}
+
+:root[data-theme="light"] .contact-watermark {
+  color: rgba(58, 108, 142, .08);
+}
+
+:root[data-theme="light"] .contact-orb {
+  opacity: .22;
+}
+
+/* Footer */
+:root[data-theme="light"] .footer {
+  background: #f4f7fc;
+  border-top-color: #dce4ef;
+}
+
+:root[data-theme="light"] .footer-inner p,
+:root[data-theme="light"] .footer-links > a {
+  color: #536982;
+}
+
+:root[data-theme="light"] .footer-links > a {
+  border-color: #cbd7e6;
+}
+
+/* Menu movil */
+@media (max-width: 900px) {
+  .portal-theme-toggle {
+    margin-left: auto;
+  }
+
+  :root[data-theme="light"] .nav-links {
+    background: #ffffff;
+    border-bottom-color: #dce4ef;
+    box-shadow: 0 18px 38px rgba(37, 61, 94, .1);
+  }
+}
+
+@media (max-width: 430px) {
+  .portal-theme-toggle {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .header-inner {
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-theme-toggle,
+  .portal-theme-toggle::before,
+  .portal-theme-core {
+    transition: none;
+  }
+}
+
+
+/* LF_DEVELOPER_THEME_V1 */
+
+.developer-theme-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 88px;
+    height: 40px;
+    flex: 0 0 88px;
+    padding: 4px;
+    border-radius: 999px;
+    border: 1px solid rgba(150, 170, 198, .35);
+    background: #142138;
+    cursor: pointer;
+    isolation: isolate;
+    transition: background .3s ease, border-color .3s ease;
+}
+
+.developer-theme-toggle::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    bottom: 4px;
+    width: calc(50% - 4px);
+    border-radius: 999px;
+    background: #e1eaf8;
+    box-shadow: 0 2px 8px rgba(10, 25, 48, .14);
+    transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+    z-index: 0;
+}
+
+.developer-theme-option {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 50%;
+    font-family: "Space Grotesk", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -.06em;
+    transition: color .3s ease;
+}
+
+/* Oscuro: seleccion izquierda */
+:root:not([data-theme="light"]) .developer-theme-left {
+    color: #22334d;
+}
+
+:root:not([data-theme="light"]) .developer-theme-right {
+    color: #aab9d0;
+}
+
+/* Claro: seleccion derecha */
+:root[data-theme="light"] .developer-theme-toggle {
+    background: #e6edf6;
+    border-color: #c9d5e4;
+}
+
+:root[data-theme="light"] .developer-theme-toggle::before {
+    transform: translateX(100%);
+    background: #ffffff;
+}
+
+:root[data-theme="light"] .developer-theme-left {
+    color: #8594a9;
+}
+
+:root[data-theme="light"] .developer-theme-right {
+    color: #233750;
+}
+
+.developer-theme-toggle:hover {
+    border-color: #8b9eb8;
+}
+
+.developer-theme-toggle:focus-visible {
+    outline: 3px solid #62e8e2;
+    outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+    .developer-theme-toggle {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 430px) {
+    .developer-theme-toggle {
+        width: 76px;
+        flex-basis: 76px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .developer-theme-toggle,
+    .developer-theme-toggle::before,
+    .developer-theme-option {
+        transition: none;
+    }
+}
+
+
+/* LF_DEVELOPER_ANALOG_V1 */
+
+/* Carril con relieve interior */
+.developer-theme-toggle.developer-theme-analog {
+    position: relative;
+    width: 132px;
+    flex: 0 0 132px;
+    height: 50px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid #aebdce;
+    background: linear-gradient(180deg, #d3deeb, #e9eff6);
+    box-shadow:
+        inset 0 3px 6px rgba(30, 48, 75, .17),
+        inset 0 1px 2px rgba(30, 48, 75, .14),
+        0 1px 2px rgba(30, 48, 75, .08);
+    transition: background .3s ease, border-color .3s ease;
+}
+
+/* Desactivar la pieza anterior */
+.developer-theme-toggle.developer-theme-analog::before {
+    content: none;
+    display: none;
+}
+
+/* Indicadores en los extremos */
+.developer-theme-analog .developer-theme-option {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    color: #64778e;
+    font-size: 19px;
+    line-height: 1;
+}
+
+.developer-theme-analog .developer-theme-option small {
+    font-size: 9px;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+
+/* Pieza fisica que sobresale */
+.developer-theme-analog .developer-theme-thumb {
+    position: absolute;
+    z-index: 3;
+    left: 4px;
+    top: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    border-radius: 999px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    pointer-events: none;
+
+    background: linear-gradient(180deg, #ffffff, #dbe4ee);
+    border: 1px solid rgba(255, 255, 255, .95);
+    color: #263a52;
+
+    box-shadow:
+        0 5px 9px rgba(25, 41, 67, .23),
+        0 2px 3px rgba(25, 41, 67, .18),
+        inset 0 2px 1px rgba(255, 255, 255, .95),
+        inset 0 -2px 3px rgba(55, 77, 105, .10);
+
+    transition: transform .32s cubic-bezier(.22, 1, .36, 1);
+}
+
+.developer-theme-thumb strong {
+    font-family: "Space Grotesk", monospace;
+    font-size: 13px;
+    letter-spacing: -.07em;
+    line-height: 1;
+}
+
+.developer-theme-thumb small {
+    font-size: 9px;
+    font-weight: 600;
+    color: #52657d;
+}
+
+/* Claro: pieza hacia la derecha */
+:root[data-theme="light"] .developer-theme-analog .developer-theme-thumb {
+    transform: translateX(100%);
+}
+
+/* Oscuro: pieza hacia la izquierda */
+:root[data-theme="dark"] .developer-theme-toggle.developer-theme-analog {
+    background: linear-gradient(180deg, #172439, #26364d);
+    border-color: #394961;
+    box-shadow:
+        inset 0 3px 7px rgba(0, 0, 0, .35),
+        0 1px 2px rgba(0, 0, 0, .16);
+}
+
+:root[data-theme="dark"] .developer-theme-analog .developer-theme-option {
+    color: #b9c8d8;
+}
+
+/* Sensacion de pulsacion real */
+.developer-theme-analog:active .developer-theme-thumb {
+    box-shadow:
+        0 2px 4px rgba(25, 41, 67, .2),
+        inset 0 2px 3px rgba(60, 78, 105, .1);
+    transform: translateY(1px);
+}
+
+:root[data-theme="light"] .developer-theme-analog:active .developer-theme-thumb {
+    transform: translateX(100%) translateY(1px);
+}
+
+.developer-theme-analog:focus-visible {
+    outline: 3px solid #529ba8;
+    outline-offset: 4px;
+}
+
+/* Adaptacion a pantallas pequenas */
+@media (max-width: 900px) {
+    .developer-theme-toggle.developer-theme-analog {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 430px) {
+    .developer-theme-toggle.developer-theme-analog {
+        width: 96px;
+        flex-basis: 96px;
+        height: 42px;
+    }
+
+    .developer-theme-analog .developer-theme-option small,
+    .developer-theme-thumb small {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .developer-theme-toggle.developer-theme-analog {
+        width: 78px;
+        flex-basis: 78px;
+    }
+
+    .header-inner {
+        gap: 7px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .developer-theme-analog .developer-theme-thumb {
+        transition: none;
+    }
+}
+
+
+/* LF_FOOTER_LIGHT_HOVER_V1 */
+
+/* Efectos de los iconos del footer en modo claro */
+:root[data-theme="light"] .footer-links > a {
+    transition:
+        color .25s ease,
+        background-color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+}
+
+:root[data-theme="light"] .footer-links > a:hover,
+:root[data-theme="light"] .footer-links > a:focus-visible {
+    color: #087e87;
+    background: rgba(8, 126, 135, .09);
+    border-color: rgba(8, 126, 135, .55);
+    box-shadow:
+        0 0 0 3px rgba(8, 126, 135, .08),
+        0 6px 18px rgba(32, 70, 105, .13);
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root[data-theme="light"] .footer-links > a {
+        transition: none;
+    }
+
+    :root[data-theme="light"] .footer-links > a:hover {
+        transform: none;
+    }
+}
+
+
+/* LF_FOOTER_SIN_MOVIMIENTO_V1 */
+.footer-links > a:hover,
+.footer-links > a:focus-visible,
+:root[data-theme="light"] .footer-links > a:hover,
+:root[data-theme="light"] .footer-links > a:focus-visible {
+    transform: none !important;
+}
+
+
+/* LF_MENU_MOVIL_CLARO_V1 */
+:root[data-theme="light"] .menu-button {
+    background: #e8eef6;
+    border-color: #c9d5e4;
+}
+
+:root[data-theme="light"] .menu-button span {
+    background: #263a52;
+}
+
+:root[data-theme="light"] .menu-button:hover {
+    background: #dce6f1;
+}
+/* Botones de acciones debajo del titulo */
+.project-card .project-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 18px;
+  padding: 0;
+  border: none;
+  min-height: 0;
+}
+
+.project-card .project-actions .text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  min-height: 39px;
+  border: 1px solid rgba(23, 136, 150, .35);
+  border-radius: 10px;
+  background: rgba(23, 136, 150, .09);
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+
+.project-card .project-actions .text-link:hover {
+  background: rgba(23, 136, 150, .18);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.project-card .project-actions .link-muted {
+  border-color: rgba(145, 105, 225, .35);
+  background: rgba(145, 105, 225, .09);
+}
+
+.project-card .project-actions .privacy-note {
+  font-size: 10px;
+}
+
+/* LF_HOVER_ESTABLE_V1 */
+
+/* Eliminar movimientos verticales */
+button:hover,
+a:hover,
+.project-card:hover {
+  transform: none !important;
+}
+
+/* Contorno más definido en proyectos */
+.project-card {
+  border: 1px solid rgba(92, 114, 152, .38) !important;
+}
+
+/* Hover elegante sin desplazamiento */
+.project-card:hover {
+  border-color: rgba(50, 159, 171, .58) !important;
+  transform: none !important;
+}
+
+/* LF_PROJECT_CARDS_MINIMAL_V2 */
+
+.project-list > .project-card {
+  border: 1px solid transparent !important;
+  border-radius: 22px !important;
+  box-shadow: 0 14px 36px rgba(31, 53, 80, 0.10) !important;
+  overflow: hidden;
+  transform: none !important;
+}
+
+.project-list > .project-card:hover {
+  border-color: transparent !important;
+  box-shadow: 0 14px 36px rgba(31, 53, 80, 0.10) !important;
+  transform: none !important;
+}
+
+/* LF_PROJECT_REFINEMENT_V3 */
+
+/* Capturas con sombra discreta */
+.project-list > .project-card .preview-window,
+.project-list > .project-card:hover .preview-window {
+  box-shadow: 0 5px 14px rgba(28, 45, 70, 0.12) !important;
+  border: 1px solid rgba(35, 55, 80, 0.08);
+  border-radius: 12px;
+}
+
+/* Descripcion compacta */
+.project-card .project-description {
+  min-height: 0 !important;
+  margin: 12px 0 16px !important;
+}
+
+/* Botones despues de la descripcion */
+.project-card .project-actions {
+  margin: 0 0 22px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* LF_RESTORE_IMAGE_GLOW */
+
+.project-card .project-visual {
+  position: relative;
+  isolation: isolate;
+}
+
+.project-card .project-visual::after {
+  content: "";
+  position: absolute;
+  inset: 18px 10px 4px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(53, 219, 207, 0.32),
+    transparent 75%
+  );
+  filter: blur(24px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.project-haloclock .project-visual::after {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(166, 124, 246, 0.30),
+    transparent 75%
+  );
+}
+
+.project-card .preview-window {
+  position: relative;
+  z-index: 1;
+}
+/* LF_GLOW_UNIFORME_V5 */
+
+/* Quitar efectos antiguos desiguales */
+.project-list > .project-card .project-visual::before,
+.project-list > .project-card .project-visual::after {
+  display: none !important;
+}
+
+/* Espacio para que la luz rodee toda la imagen */
+.project-list > .project-card .project-visual {
+  padding: 24px 22px 22px !important;
+  width: 100%;
+  height: fit-content !important;
+  flex: 0 0 auto;
+  align-self: start;
+}
+
+/* Imagen sin sombra excesiva en reposo */
+.project-list > .project-card .preview-window {
+  box-shadow: 0 3px 8px rgba(15,25,45,.08) !important;
+  transition: box-shadow .35s ease !important;
+}
+
+/* Monaster: turquesa uniforme */
+.project-list > .project-monaster:hover .preview-window,
+.project-list > .project-monaster:focus-within .preview-window {
+  box-shadow:
+    0 0 0 2px rgba(32,210,201,.50),
+    0 0 15px 4px rgba(32,210,201,.25),
+    0 0 28px 8px rgba(32,210,201,.12) !important;
+}
+
+/* HaloClock: violeta uniforme */
+.project-list > .project-haloclock:hover .preview-window,
+.project-list > .project-haloclock:focus-within .preview-window {
+  box-shadow:
+    0 0 0 2px rgba(156,112,245,.50),
+    0 0 15px 4px rgba(156,112,245,.25),
+    0 0 28px 8px rgba(156,112,245,.12) !important;
+}
+
+@media (max-width:720px) {
+  .project-list > .project-card .project-visual {
+    padding: 18px 16px 20px !important;
+  }
+}
+/* LF_GLOW_HOVER_V6 */
+
+/* Colores de cada proyecto */
+.project-monaster { --frame-rgb: 32, 210, 201; }
+.project-haloclock { --frame-rgb: 156, 112, 245; }
+
+/* Contorno apagado inicialmente */
+.project-list > .project-card .project-visual::before {
+  content: "";
+  display: block !important;
+  position: absolute;
+  inset: 15px 11px;
+  border: 1.5px solid rgba(var(--frame-rgb), .45);
+  border-radius: 20px;
+  opacity: 0 !important;
+  transform: rotate(-3deg) scale(.98);
+  transition: opacity .3s ease, transform .3s ease !important;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Encender únicamente con hover */
+.project-list > .project-card:hover .project-visual::before {
+  opacity: 1 !important;
+  transform: rotate(-2deg) scale(1);
+  box-shadow: 0 0 22px rgba(var(--frame-rgb), .15);
+}
+
+/* Eliminar iluminación anterior */
+.project-list > .project-card .project-visual::after {
+  display: none !important;
+}
+
+/* Quitar el borde brillante permanente de las capturas */
+.project-list > .project-card .preview-window,
+.project-list > .project-card:hover .preview-window,
+.project-list > .project-card:focus-within .preview-window {
+  box-shadow:
+    0 16px 28px -12px rgba(15, 29, 52, .38),
+    0 5px 14px rgba(15, 29, 52, .14) !important;
+  border: 1px solid rgba(50, 70, 100, .08) !important;
+}
+
+/* LF_HERO_PHOTO_GLOW_V1 */
+
+.hero-visual {
+  isolation: isolate;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 370px;
+  height: 460px;
+  border: 2px solid rgba(55, 214, 218, .65);
+  border-radius: 26px;
+  box-shadow: 0 0 26px rgba(55, 214, 218, .18);
+  transform: translate(-50%, -50%) rotate(-4deg);
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-visual:hover::before {
+  opacity: 1;
+}
+
+.hero-visual .portrait-card {
+  z-index: 2;
+}
+
+.hero-visual .portrait-aura {
+  z-index: 0;
+}
+
+@media (max-width: 1150px) {
+  .hero-visual::before { width: 310px; height: 430px; }
+}
+
+@media (max-width: 900px) {
+  .hero-visual::before { width: 260px; height: 335px; }
+}
+
+@media (max-width: 720px) {
+  .hero-visual::before { width: 300px; height: 420px; }
+}
+
+@media (max-width: 430px) {
+  .hero-visual::before { width: min(80%, 310px); height: 370px; }
+}
+/* LF_HERO_FRAME_MOTION_V2 */
+
+.hero-visual::before {
+  opacity: 0;
+  transform: translate(-50%, -50%)
+             rotate(2deg) scale(.94);
+  transition:
+    transform .5s cubic-bezier(.22, 1, .36, 1),
+    opacity .35s ease;
+}
+
+.hero-visual:hover::before {
+  opacity: 1;
+  transform:
+    translate(calc(-50% - 10px), calc(-50% + 6px))
+    rotate(-5deg)
+    scale(1.02);
+}
+
+
+
+
+
+
+
+/* Estilo minimalista como el footer */
+
+
+/* Hover sin movimiento */
+
+/* Adaptación al modo oscuro */
+
+
+
+
+/* Igual que los iconos originales del footer */
+
+
+
+
+
+
+
+/* Iconos más visibles, manteniendo el estilo del footer */
+
+
+
+
+
+
+
+/* Mismo hover del footer en tema claro */
+
+/* Mismo comportamiento en tema oscuro */
+
+/* LF_PROJECT_SPACING_V1 */
+
+/* Espacios equilibrados en las tarjetas */
+.project-list .project-heading-row {
+  margin-bottom: 20px !important;
+}
+
+.project-list .project-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px !important;
+  margin: 0 0 22px !important;
+  padding: 0 !important;
+  border: none !important;
+  min-height: 0 !important;
+}
+
+.project-list .project-tags {
+  margin-top: 0 !important;
+}
+
+.project-list .project-info {
+  padding-bottom: 32px !important;
+}
+
+@media (max-width: 720px) {
+  .project-list .project-heading-row {
+    margin-bottom: 16px !important;
+  }
+
+  .project-list .project-actions {
+    margin-bottom: 18px !important;
+  }
+}
+
+
+/* LF_ONLY_FRAME_NO_GLOW_V1 */
+/* Recuperar el contorno inclinado, sin resplandor */
+.project-list > .project-card .project-visual::before {
+  content: "" !important;
+  display: block !important;
+  box-shadow: none !important;
+}
+
+.project-list > .project-card:hover .project-visual::before,
+.project-list > .project-card:focus-within .project-visual::before {
+  box-shadow: none !important;
+}
+
+/* Mantener desactivado el halo difuso */
+.project-list > .project-card .project-visual::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* LF_REMOVE_DIFFUSE_GLOW_FINAL */
+
+/* Fondo limpio de las tarjetas, sin gradientes luminosos */
+:root[data-theme="light"] .project-list > .project-card,
+:root[data-theme="light"] .project-list > .project-card:hover,
+:root[data-theme="light"] .project-list > .project-card:focus-within {
+  background: #f6f8fc !important;
+}
+
+:root[data-theme="dark"] .project-list > .project-card,
+:root[data-theme="dark"] .project-list > .project-card:hover,
+:root[data-theme="dark"] .project-list > .project-card:focus-within {
+  background: #111c2d !important;
+}
+
+/* Quitar iluminación del área que rodea la portada */
+.project-list > .project-card .project-visual,
+.project-list > .project-card:hover .project-visual,
+.project-list > .project-card:focus-within .project-visual {
+  background: transparent !important;
+  filter: none !important;
+}
+
+/* Evitar cualquier resplandor superpuesto a la tarjeta */
+.project-list > .project-card::before,
+.project-list > .project-card::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Mantener el contorno fino e inclinado de la portada */
+.project-list > .project-card .project-visual::before {
+  content: "" !important;
+  display: block !important;
+  box-shadow: none !important;
+}
+
+/* Sin halo difuso detrás de la portada */
+.project-list > .project-card .project-visual::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* El contenido inferior no debe tener iluminación propia */
+.project-list > .project-card .project-info {
+  background: transparent !important;
+}
+
+
+/* LF_PROJECT_LAYOUT_SPACING_V2 */
+
+/* Descripción */
+.projects-section .project-list > .project-card .project-description {
+  min-height: 0 !important;
+  margin: 16px 0 18px !important;
+}
+
+/* Tecnologías */
+.projects-section .project-list > .project-card .project-tags {
+  margin: 0 !important;
+  gap: 8px !important;
+}
+
+/* Botones debajo de las tecnologías */
+.projects-section .project-list > .project-card .project-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px !important;
+  margin: 24px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Espacio inferior de las tarjetas */
+.projects-section .project-list > .project-card .project-info {
+  padding-bottom: 28px !important;
+}
+
+/* Detalles siempre debajo de los botones */
+.projects-section .project-list > .project-card .case-details {
+  margin-top: 24px !important;
+}
+
+
+/* LF_PROJECT_COVER_HALO_V1 */
+
+/* Limitar la iluminación a la zona de la portada */
+.project-list > .project-card .project-visual {
+  overflow: clip !important;
+}
+
+/* Halo suave, como el de las tarjetas de Tecnologías */
+.project-list > .project-card:hover .project-visual::before,
+.project-list > .project-card:focus-within .project-visual::before {
+  box-shadow: 0 0 35px rgba(var(--frame-rgb), .16) !important;
+}
+
+/* Conservar el halo difuso antiguo desactivado */
+.project-list > .project-card .project-visual::after {
+  display: none !important;
+}
+
+/* LF_CONTACT_HOVER_SUAVE_V2 */
+
+/* Contacto: sin marco inclinado, solo profundidad sutil */
+.contact-panel::before {
+  content: none !important;
+  display: none !important;
+}
+
+.contact-panel {
+  transition: box-shadow .3s ease !important;
+}
+
+.contact-panel:hover,
+.contact-panel:focus-within {
+  transform: none !important;
+  box-shadow: 0 14px 40px rgba(31, 53, 80, .14) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-panel {
+    transition: none !important;
+  }
+}

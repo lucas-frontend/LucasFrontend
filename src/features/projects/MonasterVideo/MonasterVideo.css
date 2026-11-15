@@ -1,0 +1,23 @@
+
+.video-backdrop {
+  position: fixed; inset: 0; z-index: 10000;
+  background: rgba(5,10,25,.9);
+  display: grid; place-items: center; padding: 16px;
+}
+.video-modal {
+  width: min(1050px,100%); overflow: hidden;
+  border-radius: 16px; background: #111c2d;
+  box-shadow: 0 30px 90px #0008; color: white;
+}
+.video-modal header {
+  display: flex; align-items: center;
+  justify-content: space-between; padding: 12px 18px;
+}
+.video-modal header button {
+  background: transparent; border: 0; color: white;
+  cursor: pointer; font-size: 22px;
+}
+.video-modal video {
+  display: block; width: 100%;
+  max-height: 75vh; background: black;
+}

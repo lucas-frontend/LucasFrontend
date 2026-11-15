@@ -1,0 +1,58 @@
+/* Botones principales: azul y violeta */
+
+.hero-buttons a.button.button-primary,
+.contact-actions a.button.button-primary {
+  background: linear-gradient(115deg, #356DAE, #7058B8);
+  color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 22px rgba(68, 77, 151, 0.18);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-buttons a.button.button-primary:hover,
+.contact-actions a.button.button-primary:hover {
+  background: linear-gradient(115deg, #294F91, #59439C);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(68, 77, 151, 0.25);
+}
+
+.hero-buttons a.button.button-primary:focus-visible,
+.contact-actions a.button.button-primary:focus-visible {
+  outline: 3px solid #9985E7;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-buttons a.button.button-primary,
+  .contact-actions a.button.button-primary {
+    transition: none;
+  }
+}
+/* FOOTER HOVER AZUL VIOLETA */
+
+.footer .footer-links > a {
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+:root .footer .footer-links > a:hover,
+:root .footer .footer-links > a:focus-visible {
+  background: linear-gradient(115deg, #356DAE, #7058B8);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 7px 18px rgba(68, 77, 151, 0.25);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer .footer-links > a {
+    transition: none;
+  }
+}

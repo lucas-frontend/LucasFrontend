@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+<!-- LF_THEME_BOOTSTRAP_V1 -->
+<script>
+  (function () {
+    var theme = "light";
+
+    try {
+      theme = localStorage.getItem("lf-theme-developer-v3") === "dark"
+        ? "dark"
+        : "light";
+    } catch (error) {}
+
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="description" content="Portfolio de Lucas Benítez, desarrollador Frontend y Full Stack. React, TypeScript, Node.js y proyectos reales como Monaster y Haloclock." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lucas Benítez | Frontend & Full Stack Developer" />
+    <meta property="og:description" content="Desarrollo aplicaciones que resuelven problemas reales. Conoce Monaster y Haloclock." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Lucas Benítez | Frontend & Full Stack Developer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

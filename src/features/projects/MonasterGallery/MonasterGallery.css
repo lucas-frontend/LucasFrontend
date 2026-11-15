@@ -1,0 +1,92 @@
+.monaster-gallery-trigger {
+  display:block;width:100%;padding:0;border:0;
+  background:transparent;cursor:zoom-in;text-align:left;
+  border-radius:11px;
+}
+.monaster-gallery-backdrop {
+  position:fixed;inset:0;z-index:9999;display:grid;
+  place-items:center;padding:16px;background:rgba(5,10,25,.88);
+}
+.monaster-gallery-panel {
+  width:min(1180px,100%);max-height:calc(100dvh - 32px);
+  display:flex;flex-direction:column;overflow:hidden;
+  border-radius:18px;background:#f7f9fc;color:#19283e;
+  box-shadow:0 30px 90px #0008;
+}
+.monaster-gallery-header,.monaster-gallery-caption {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;padding:12px 18px;
+}
+.monaster-gallery-header button,.monaster-gallery-stage button {
+  border:0;border-radius:50%;background:white;color:#243448;
+  cursor:pointer;font-size:20px;width:38px;height:38px;
+  flex-shrink:0;
+}
+.monaster-gallery-stage {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:8px;min-height:0;padding:10px;background:#e9edf3;
+}
+.monaster-gallery-stage img {
+  display:block;width:calc(100% - 92px);height:min(60vh,650px);
+  min-height:0;object-fit:contain;
+}
+.monaster-gallery-caption {font-size:12px}
+.monaster-gallery-caption a {color:#6550c8;font-weight:700}
+.monaster-gallery-thumbs {
+  display:flex;gap:10px;padding:12px 16px;
+  overflow-x:auto;border-top:1px solid #dce2ec;
+}
+.monaster-gallery-thumbs button {
+  flex:0 0 110px;padding:5px;border:1px solid #dce2ec;
+  border-radius:9px;background:white;cursor:pointer;color:#25344a;
+}
+.monaster-gallery-thumbs button[aria-pressed="true"] {
+  border-color:#8158ec;outline:2px solid #b99aff;
+}
+.monaster-gallery-thumbs img {
+  width:100%;height:62px;object-fit:cover;object-position:top;
+}
+.monaster-gallery-thumbs span {
+  display:block;font-size:11px;margin-top:5px;
+}
+@media(max-width:600px) {
+  .monaster-gallery-backdrop {padding:8px}
+  .monaster-gallery-stage {gap:3px;padding:5px}
+  .monaster-gallery-stage img {
+    width:calc(100% - 78px);height:55vh;
+  }
+  .monaster-gallery-stage button {width:36px;height:36px}
+  .monaster-gallery-thumbs button {flex-basis:85px}
+  .monaster-gallery-caption {flex-wrap:wrap}
+}
+
+.monaster-gallery-trigger {
+  position: relative;
+  cursor: pointer;
+}
+.monaster-gallery-label {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+  padding: 10px 16px;
+  border-radius: 9px;
+  background: rgba(14, 25, 42, .9);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+  transition: background .2s, transform .2s;
+}
+.monaster-gallery-trigger:hover .monaster-gallery-label {
+  background: #256f78;
+  transform: translateY(-2px);
+}
+
+.monaster-gallery-trigger {
+  cursor: pointer;
+}
+.monaster-gallery-label {
+  display: none;
+}

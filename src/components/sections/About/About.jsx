@@ -1,0 +1,5 @@
+import avatarPhoto from "../../../assets/lucas-avatar.webp";
+
+function About() {return <section id="sobre-mi" className="section about-section container" aria-labelledby="about-heading"><div className="about-pane"><div className="about-portrait"><img src={avatarPhoto} width="480" height="480" loading="lazy" alt="Retrato de Lucas Benítez"/></div><div className="about-text"><span className="section-kicker"><span>03</span> / SOBRE MÍ</span><h2 id="about-heading">Curiosidad, detalle<br/>y ganas de <em>construir.</em></h2><p>Me gusta combinar la parte visual con la técnica: crear interfaces claras, conectar servicios y resolver problemas que existen fuera del código.</p><p>En 2026 completé la <strong>Diplomatura en Desarrollo Web Full Stack de Academia Numen</strong>. Ese mismo camino me llevó a desarrollar Haloclock y a entregar Monaster, mi primer software vendido a un cliente.</p><div className="about-milestones"><div><span>2026</span><strong>Diplomatura Full Stack</strong><small>Academia Numen</small></div><div><span>01</span><strong>Producto comercial</strong><small>Monaster · Software hotelero</small></div></div></div></div></section>}
+
+export default About;

@@ -1,4 +1,4 @@
-# Portfolio | Lucas Benítez
+# Portfolio | Lucas Frontend
 
 **Desarrollador Frontend & Full Stack**
 
@@ -75,4 +75,5 @@ Estoy abierto a oportunidades profesionales como desarrollador Frontend y Full S
 
 ---
 
-Desarrollado por Lucas Benítez.
+Desarrollado por Lucas Frontend.
+

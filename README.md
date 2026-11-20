@@ -1,50 +1,78 @@
-# LucasFrontend — Portfolio
+# Portfolio | Lucas Benítez
 
-Portfolio profesional de desarrollo Frontend y Full Stack, creado con React y Vite.
+**Desarrollador Frontend & Full Stack**
+
+Bienvenido a mi portfolio profesional. Aquí presento mis proyectos, habilidades técnicas y experiencia desarrollando aplicaciones que resuelven problemas reales.
 
 🌐 **[Ver portfolio online](https://lucasfrontend.pages.dev)**
 
+## Sobre este portfolio
+
+Sitio web personal desarrollado con React, JavaScript y Vite.
+
+Incluye mi presentación profesional, proyectos destacados, tecnologías y formas de contacto.
+
+Este repositorio contiene el código del portfolio, no el código fuente de todos los proyectos que aparecen en él.
+
 ## Proyectos destacados
 
-### Monaster — Gestión de turnos
+### Monaster — Software de gestión hotelera
 
-Software de escritorio desarrollado para un cliente real del sector hotelero.
+Aplicación de escritorio desarrollada y entregada a un cliente real.
 
-Automatiza la planificación de turnos, gestiona empleados, vacaciones y ausencias, y permite exportar cronogramas.
+Permite automatizar la planificación de turnos, gestionar empleados, descansos, vacaciones y ausencias, y exportar horarios.
 
 **Tecnologías:** React, TypeScript, Tauri, Rust y SQLite.
 
-*Proyecto entregado a cliente. Código privado.*
+**Estado:** Proyecto comercial entregado. Código privado.
 
 ### HaloClock — Aplicación Full Stack
 
-Proyecto final de diplomatura para coordinar los paseos y cuidados de perros en familia.
+Aplicación web para coordinar paseos y cuidados de perros en familia.
 
-Incluye autenticación con Google, gestión familiar, historial de paseos, estadísticas y notificaciones.
+Incluye autenticación con Google, perfiles familiares, seguimiento de paseos y estadísticas.
 
-**Tecnologías:** React, JavaScript, Node.js, Express y MongoDB.
+**Tecnologías:** React, Node.js, Express, MongoDB y OAuth.
 
 **[Ver código de HaloClock](https://github.com/lucas-frontend/haloclock)**
 
-## Tecnologías del portfolio
+## Tecnologías
 
-React · JavaScript · Vite · HTML · CSS · Git · GitHub
+**Portfolio:** React · JavaScript · Vite · HTML · CSS
 
-## Ejecutar localmente
+**Otros proyectos:** TypeScript · Node.js · Express · MongoDB · Tauri · Rust · SQLite
+
+**Herramientas:** Git · GitHub
+
+## Instalación local
+
+Necesitas Node.js y npm.
 
 ```bash
-git clone https://github.com/lucas-frontend/LucasFrontend.git
-cd LucasFrontend
+git clone https://github.com/lucas-frontend/Portfolio.git
+cd Portfolio
 npm install
 npm run dev
 ```
 
+Abre la dirección local que muestre Vite en la terminal.
+
+## Comandos
+
+| Comando | Descripción |
+| --- | --- |
+| `npm run dev` | Iniciar servidor local |
+| `npm run build` | Generar versión de producción |
+| `npm run preview` | Previsualizar producción |
+| `npm run lint` | Analizar código con ESLint |
+
 ## Contacto
 
-Abierto a oportunidades profesionales como desarrollador Frontend y Full Stack.
+Estoy abierto a oportunidades profesionales como desarrollador Frontend y Full Stack.
 
-**[Portfolio](https://lucasfrontend.pages.dev)**
+- Portfolio: https://lucasfrontend.pages.dev
+- GitHub: https://github.com/lucas-frontend
 
 ---
 
-Desarrollado por LucasFrontend.
+Desarrollado por Lucas Benítez.
